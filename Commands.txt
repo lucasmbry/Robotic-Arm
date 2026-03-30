@@ -1,0 +1,23 @@
+Change directory: cd
+Make directory: mkdir
+Create file: touch
+
+
+
+
+Setup
+cd ~/ros2_ws/src/
+
+Create ros package in python
+ros2 pkg create --build-type ament_python six_dof
+
+Build and run
+colcon build --packages-select six_dof
+source install/setup.bash
+ros2 launch six_dof display.launch.py
+
+MoveIt setup assistant
+ros2 run moveit_setup_assistant moveit_setup_assistant
+
+MoveIt demo
+ros2 launch six_dof_moveit demo.launch.py

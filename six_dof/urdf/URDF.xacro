@@ -1,0 +1,209 @@
+<?xml version="1.0" ?>
+<robot name="URDF" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find six_dof)/urdf/materials.xacro" />
+<xacro:include filename="$(find six_dof)/urdf/URDF.trans" />
+<xacro:include filename="$(find six_dof)/urdf/URDF.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-6.03949665561209e-18 0.0 0.0231531185995785" rpy="0 0 0"/>
+    <mass value="0.36941889655878896"/>
+    <inertia ixx="0.000231" iyy="0.000231" izz="0.000293" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sixth_link_1">
+  <inertial>
+    <origin xyz="0.00011623285362584446 0.00011623280232325263 0.00354596647044092" rpy="0 0 0"/>
+    <mass value="0.05217590891377614"/>
+    <inertia ixx="6e-06" iyy="6e-06" izz="1e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.04 -0.0 -0.25" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/sixth_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.04 -0.0 -0.25" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/sixth_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="fifth_link_1">
+  <inertial>
+    <origin xyz="0.019999999999999938 5.256962373349311e-18 0.001162156302579015" rpy="0 0 0"/>
+    <mass value="0.4244093892696507"/>
+    <inertia ixx="9.3e-05" iyy="0.000102" izz="0.0001" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.02 0.0 -0.23" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/fifth_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.02 0.0 -0.23" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/fifth_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="fourth_link_1">
+  <inertial>
+    <origin xyz="-0.019999999812652616 -7.754144435697623e-18 0.040000000551339704" rpy="0 0 0"/>
+    <mass value="1.1509221726721612"/>
+    <inertia ixx="0.00153" iyy="0.001547" izz="0.000247" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.02 0.0 -0.15" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/fourth_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.02 0.0 -0.15" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/fourth_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="third_link_1">
+  <inertial>
+    <origin xyz="0.02000000030341891 0.0 0.04000000031919668" rpy="0 0 0"/>
+    <mass value="1.1509221726721615"/>
+    <inertia ixx="0.00153" iyy="0.001547" izz="0.000247" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.02 0.0 -0.07" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/third_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.02 0.0 -0.07" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/third_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="second_link_1">
+  <inertial>
+    <origin xyz="0.0009835554885279454 0.0 0.01654218773564395" rpy="0 0 0"/>
+    <mass value="0.5014765840530248"/>
+    <inertia ixx="0.000145" iyy="0.000147" izz="0.000117" ixy="0.0" iyz="0.0" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/second_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find six_dof)/meshes/second_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute_1" type="continuous">
+  <origin xyz="0.02 0.0 0.02" rpy="0 0 0"/>
+  <parent link="fifth_link_1"/>
+  <child link="sixth_link_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit effort="0.18" velocity="8.7"/>
+</joint>
+
+<joint name="Revolute_2" type="continuous">
+  <origin xyz="0.0 0.0 0.08" rpy="0 0 0"/>
+  <parent link="fourth_link_1"/>
+  <child link="fifth_link_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit effort="0.18" velocity="8.7"/>
+</joint>
+
+<joint name="Revolute_3" type="continuous">
+  <origin xyz="0.0 0.0 0.08" rpy="0 0 0"/>
+  <parent link="third_link_1"/>
+  <child link="fourth_link_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit effort="0.18" velocity="8.7"/>
+</joint>
+
+<joint name="Revolute_4" type="continuous">
+  <origin xyz="0.02 -0.0 0.02" rpy="0 0 0"/>
+  <parent link="second_link_1"/>
+  <child link="third_link_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit effort="0.18" velocity="8.7"/>
+</joint>
+
+<joint name="Revolute_5" type="continuous">
+  <origin xyz="0.0 0.0 0.05" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="second_link_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+  <limit effort="0.18" velocity="8.7"/>
+</joint>
+
+<ros2_control name="IgnitionSystem" type="system">
+    <hardware>
+      <plugin>mock_components/GenericSystem</plugin>
+    </hardware>
+    
+    <joint name="Revolute_1">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="Revolute_2">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="Revolute_3">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="Revolute_4">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="Revolute_5">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+</robot>
