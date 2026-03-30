@@ -21,3 +21,6 @@ ros2 run moveit_setup_assistant moveit_setup_assistant
 
 MoveIt demo
 ros2 launch six_dof_moveit demo.launch.py
+
+Remove \r windows characters
+sed -i 's/\r$//' ./ros2_ws/src/six_dof/draw_square.py

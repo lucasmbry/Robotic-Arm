@@ -1,0 +1,24 @@
+1. Simulation
+
+2. Design
+
+Want controller through real space to control arm
+
+Assume 20cm - 20cm - 10cm arm
+500g max load
+500g from motors
+1kg from body
+
+Gearing:
+x:1 in Base
+50:1 in shoulder - https://www.thingiverse.com/thing:2054378
+30:1 in elbow - https://www.thingiverse.com/thing:2054378
+
+Last 3 should only have to rotate mass around its COM
+Shouldnt need gearing, will see
+
+3. Build
+
+Use Hidden UART0 Bluetooth on pi3b+ as another uart channel, can use 6 steppers this way without motherboard
+May need usb to uart adapter.
+
