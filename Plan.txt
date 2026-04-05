@@ -4,6 +4,8 @@
 
 Want controller through real space to control arm
 
+Using tmc2209 - https://www.xecor.com/blog/tmc2209-pinout-datasheet-alternatives-uses#title-1tmc2209-pinout
+
 Assume 20cm - 20cm - 10cm arm
 500g max load
 500g from motors
@@ -13,6 +15,13 @@ Gearing:
 x:1 in Base
 50:1 in shoulder - https://www.thingiverse.com/thing:2054378
 30:1 in elbow - https://www.thingiverse.com/thing:2054378
+
+This in after elbow: https://www.printables.com/model/1528707-91-3d-printed-cycloidal-drive-gearbox-for-nema-17/files
+
+Before print consider:
+Cabling
+Assembly
+DFM
 
 Last 3 should only have to rotate mass around its COM
 Shouldnt need gearing, will see
