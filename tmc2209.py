@@ -16,8 +16,8 @@ class TMC2209:
     def __init__(self, uart, address=0):
         self.uart = uart
         self.address = address
-        # Adjust delay based on baudrate (0.005s is safe for 115200)
-        self.communication_pause = 0.005 
+        # Slow 0.02 for 19200 baudrate
+        self.communication_pause = 0.02 
 
     # =================================================================
     # LOW-LEVEL UART COMMUNICATION
@@ -35,9 +35,9 @@ class TMC2209:
         return crc
 
     def read_reg(self, reg):
-        """ Reads a register and filters out the single-wire TX echo. """
-        # Clear any junk in the buffer
-        if self.uart.any():
+        """ Reads a register by accumulating bytes until the full frame arrives. """
+        # Clear out any old garbage in the buffer
+        while self.uart.any():
             self.uart.read() 
 
         # Build and send request datagram
@@ -45,27 +45,38 @@ class TMC2209:
         req[3] = self.compute_crc8_atm(req[:-1])
         self.uart.write(req)
         
-        time.sleep(self.communication_pause)
+        # We expect a 12-byte total transaction (4 byte echo + 8 byte reply)
+        # 100ms is a very safe timeout for 19200 baud
+        timeout = time.ticks_ms() + 100
+        resp = bytearray()
         
-        if self.uart.any():
-            resp = self.uart.read()
-            # Scan the received buffer for the reply signature (0x05, 0xFF)
-            # This skips past the echo of our own 4-byte request
-            for i in range(len(resp) - 7):
-                if resp[i] == 0x05 and resp[i+1] == 0xFF and resp[i+2] == self.address and resp[i+3] == reg:
-                    data_bytes = resp[i+4 : i+8]
-                    received_crc = resp[i+7]
-                    # Verify CRC of the reply
-                    if self.compute_crc8_atm(resp[i:i+7]) == received_crc:
-                         return data_bytes
-        return None
+        while time.ticks_diff(timeout, time.ticks_ms()) > 0:
+            if self.uart.any():
+                resp.extend(self.uart.read())
+            if len(resp) >= 12:
+                break # We got the full message!
+                
+        # Scan the received buffer for the reply signature: Sync(0x05), Master(0xFF), Reg
+        for i in range(len(resp) - 7):
+            if resp[i] == 0x05 and resp[i+1] == 0xFF and resp[i+2] == reg:
+                # Slicing the exact 4 bytes of data and the 1 byte CRC
+                data_bytes = resp[i+3 : i+7]
+                received_crc = resp[i+7]
+                
+                # Verify CRC of the reply (computed over the first 7 bytes of the reply)
+                if self.compute_crc8_atm(resp[i : i+7]) == received_crc:
+                    return data_bytes
+                    
+        return None # Return None if we timed out or CRC failed
 
     def read_int(self, reg):
         """ Tries to read a register and unpack it into an integer. """
-        for _ in range(5): # Try 5 times
+        for _ in range(5): # Try up to 5 times
             data = self.read_reg(reg)
             if data is not None and len(data) == 4:
                 return struct.unpack(">i", data)[0]
+            time.sleep(0.01) # Breathe for 10ms before retrying
+            
         print(f"TMC2209 (Address {self.address}) Read Error. Is motor power ON?")
         return 0
 
@@ -79,7 +90,7 @@ class TMC2209:
         frame[7] = self.compute_crc8_atm(frame[:-1])
         
         self.uart.write(frame)
-        time.sleep(self.communication_pause)
+        time.sleep(0.01) # Give the driver time to process the write
 
     # =================================================================
     # HIGH-LEVEL MOTOR SETTINGS

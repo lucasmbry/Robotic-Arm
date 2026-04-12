@@ -8,3 +8,5 @@ Base cyloidal drive bad and not spinning easily
 
 Setting up a tmc2209 uart test
 Mention driving each driver to a different ms pin combo to select uart address
+
+The fucking breadboard is split down the middle

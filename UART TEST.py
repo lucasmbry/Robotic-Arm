@@ -5,10 +5,10 @@ from tmc2209 import TMC2209
 # Shared UART Pins (All 4 drivers connect to these same pins)
 UART_TX_PIN = 0 # 1k resistor
 UART_RX_PIN = 1 # After the 1k resistor, this pin connects to the RX pin of all 4 drivers in parallel
-UART_BAUDRATE = 115200
+UART_BAUDRATE = 19200
 
-STEPS_PER_TEST_SWEEP = 2000  
-SPEED_DELAY_US = 800        
+STEPS_PER_TEST_SWEEP = 5000  
+SPEED_DELAY_US = 500        
 
 # Ensure each address matches the physical MS1/MS2 pin wiring
 MOTOR_CONFIGS = [
@@ -17,7 +17,7 @@ MOTOR_CONFIGS = [
         "address": 0, #MS1=0, MS2=0
         "step_pin": 16,
         "dir_pin": 17,
-        "run_current_mA": 600,
+        "run_current_mA": 1000,
         "hold_current_mA": 300,
         "microsteps": 16
     },
@@ -26,8 +26,8 @@ MOTOR_CONFIGS = [
         "address": 1, #MS1=1, MS2=0
         "step_pin": 14,
         "dir_pin": 15,
-        "run_current_mA": 800, 
-        "hold_current_mA": 400,
+        "run_current_mA": 1000, 
+        "hold_current_mA": 600,
         "microsteps": 16
     },
     
@@ -36,8 +36,8 @@ MOTOR_CONFIGS = [
         "address": 2, #MS1=0, MS2=1
         "step_pin": 12,
         "dir_pin": 13,
-        "run_current_mA": 600,
-        "hold_current_mA": 300,
+        "run_current_mA": 1000,
+        "hold_current_mA": 200,
         "microsteps": 16
     },
     {
@@ -45,7 +45,7 @@ MOTOR_CONFIGS = [
         "address": 3, #MS1=1, MS2=1
         "step_pin": 10,
         "dir_pin": 11,
-        "run_current_mA": 400, 
+        "run_current_mA": 1000, 
         "hold_current_mA": 200,
         "microsteps": 16
     }
@@ -96,15 +96,15 @@ try:
     while True:
         # Loop through each motor one by one
         for motor in motors:
-            print(f"--> Moving {motor['name']}")
+            print(f"Moving {motor['name']}")
             
             # Move Forward
             move_motor(motor, STEPS_PER_TEST_SWEEP, 1, SPEED_DELAY_US)
-            time.sleep(0.5)
+            time.sleep(0.2)
             
             # Move Backward
             move_motor(motor, STEPS_PER_TEST_SWEEP, 0, SPEED_DELAY_US)
-            time.sleep(1) # Pause before moving the next motor
+            time.sleep(0.2) # Pause before moving the next motor
 
 except KeyboardInterrupt:
     print("\nTest interrupted by user.")
