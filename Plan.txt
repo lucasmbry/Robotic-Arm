@@ -16,7 +16,7 @@ x:1 in Base
 50:1 in shoulder - https://www.thingiverse.com/thing:2054378
 30:1 in elbow - https://www.thingiverse.com/thing:2054378
 
-This in after elbow: https://www.printables.com/model/1528707-91-3d-printed-cycloidal-drive-gearbox-for-nema-17/files
+This in after elbow: https://makerworld.com/en/models/1635030-simple-nema-17-cycloidal-drive-full-plastic#profileId-1727216
 
 Before print consider:
 Cabling
@@ -31,3 +31,13 @@ Shouldnt need gearing, will see
 Use Hidden UART0 Bluetooth on pi3b+ as another uart channel, can use 6 steppers this way without motherboard
 May need usb to uart adapter.
 
+Used this but wrote own:
+https://github.com/kjk25/TMC2209_ESP32/blob/main/tmc/TMC_2209_uart.py
+
+Using pico with UART channels guide for uart channels:
+
+Driver / Motor,MS1 Pin,MS2 Pin,UART Address
+Motor 1 (Base),GND (or floating),GND (or floating),0
+Motor 2 (Shoulder),High (3.3V),GND,1
+Motor 3 (Elbow),GND,High (3.3V),2
+Motor 4 (Wrist),High (3.3V),High (3.3V),3
