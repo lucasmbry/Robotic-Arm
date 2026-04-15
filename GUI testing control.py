@@ -9,8 +9,8 @@ UART_BAUDRATE = 19200
 
 # Ensure each address matches the physical MS1/MS2 pin wiring
 MOTOR_CONFIGS = [
-    {"name": "Base",     "address": 0, "step_pin": 16, "dir_pin": 17, "run_current_mA": 1000, "hold_current_mA": 300, "microsteps": 16},
-    {"name": "Shoulder", "address": 1, "step_pin": 14, "dir_pin": 15, "run_current_mA": 1000, "hold_current_mA": 600, "microsteps": 16},
+    {"name": "Base",     "address": 0, "step_pin": 16, "dir_pin": 17, "run_current_mA": 800, "hold_current_mA": 000, "microsteps": 16},
+    {"name": "Shoulder", "address": 1, "step_pin": 14, "dir_pin": 15, "run_current_mA": 800, "hold_current_mA": 300, "microsteps": 16},
     {"name": "Elbow",    "address": 2, "step_pin": 12, "dir_pin": 13, "run_current_mA": 1000, "hold_current_mA": 200, "microsteps": 16},
     {"name": "Wrist",    "address": 3, "step_pin": 10, "dir_pin": 11, "run_current_mA": 1000, "hold_current_mA": 200, "microsteps": 16}
 ]
@@ -132,7 +132,5 @@ except KeyboardInterrupt:
     print("\nDashboard closed by user.")
 
 finally:
-    print("Shutting down all motors...")
     for motor in motors:
         motor["tmc"].disable()
-    print("Done. Safe to power off.")

@@ -47,3 +47,10 @@ Base - 1500 mA run, 0 mA hold, delay: 200 us
 Shoulder - 800 mA run, 200 mA hold, delay: 10us
 
 MAKE SURE TO CHANGE CONNECTION FROM WAIST TO BASE (THE CUTOUT ON WAIST IS WRONG (LOOK AT CROSS SECTION ANALYSIS))
+
+
+
+
+Ok im essentially starting again
+https://www.youtube.com/watch?v=9CDH4NMT_Pc
+This is helpful for gt2 stuff
