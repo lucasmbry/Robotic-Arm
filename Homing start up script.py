@@ -1,5 +1,5 @@
 from machine import Pin, UART
-import time
+import time 
 from tmc2209 import TMC2209
 
 # Shared UART Pins
@@ -10,7 +10,7 @@ maximum_homing_steps = 1000000
 
 # Added: "delay_us" to each config so every motor can have a unique speed
 MOTOR_CONFIGS = [
-    {"name": "Base",     "address": 0, "step_pin": 16, "dir_pin": 17, "diag_pin": 2, "run_current_mA": 800, "hold_current_mA": 200,   "microsteps": 16, "sg_sensitivity": 100, "homing_dir": 0, "delay_us": 100},
+    {"name": "Base",     "address": 0, "step_pin": 16, "dir_pin": 17, "diag_pin": 2, "run_current_mA": 800, "hold_current_mA": 200,   "microsteps": 16, "sg_sensitivity": 50, "homing_dir": 0, "delay_us": 200},
     {"name": "Shoulder", "address": 1, "step_pin": 14, "dir_pin": 15, "diag_pin": 3, "run_current_mA": 800, "hold_current_mA": 0, "microsteps": 16, "sg_sensitivity": 5, "homing_dir": 0, "delay_us": 600},
     {"name": "Elbow",    "address": 2, "step_pin": 12, "dir_pin": 13, "diag_pin": 4, "run_current_mA": 1000, "hold_current_mA": 200, "microsteps": 16, "sg_sensitivity": 100, "homing_dir": 0, "delay_us": 800},
     {"name": "Wrist",    "address": 3, "step_pin": 10, "dir_pin": 11, "diag_pin": 5, "run_current_mA": 1000, "hold_current_mA": 200, "microsteps": 16, "sg_sensitivity": 100, "homing_dir": 0, "delay_us": 800}
@@ -72,7 +72,7 @@ def home_motor(motor_dict, max_steps, delay_us):
     
     consecutive_stalls = 0
     REQUIRED_STALLS = 8
-    IGNORE_STEPS = 500 # <-- THE MAGIC FIX: Ignore the first 200 steps!
+    IGNORE_STEPS = 1000 # <-- THE MAGIC FIX: Ignore the first 200 steps!
     
     for step in range(max_steps):
         step_pin.high()
