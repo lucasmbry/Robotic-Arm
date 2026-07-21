@@ -8,11 +8,15 @@ UART_TX_PIN = 0
 UART_RX_PIN = 1 
 UART_BAUDRATE = 19200
 
+# NEW: Define your manual override button pin here
+MANUAL_OVERRIDE_PIN = 15
+manual_btn = Pin(MANUAL_OVERRIDE_PIN, Pin.IN, Pin.PULL_UP)
+
 MOTOR_CONFIGS = [
-    {"name": "Base",     "address": 0, "step_pin": 16, "dir_pin": 17, "limit_min": 3, "limit_max": 2, "run_current_mA": 1200, "hold_current_mA": 200, "microsteps": 16, "homing_dir": 0, "delay_us": 100},
-    {"name": "Shoulder", "address": 1, "step_pin": 14, "dir_pin": 15, "limit_min": 4, "limit_max": 5, "run_current_mA": 800,  "hold_current_mA": 0,   "microsteps": 16, "homing_dir": 0, "delay_us": 600},
-    {"name": "Elbow",    "address": 2, "step_pin": 12, "dir_pin": 13, "limit_min": 6, "limit_max": 7, "run_current_mA": 1000, "hold_current_mA": 200, "microsteps": 16, "homing_dir": 0, "delay_us": 800},
-    {"name": "Wrist",    "address": 3, "step_pin": 10, "dir_pin": 11, "limit_min": 8, "limit_max": 9, "run_current_mA": 1000, "hold_current_mA": 200, "microsteps": 16, "homing_dir": 0, "delay_us": 800}
+    {"name": "Base",     "address": 0, "step_pin": 17, "dir_pin": 16, "limit_min": 22, "limit_max": 14, "run_current_mA": 1200, "hold_current_mA": 200, "microsteps": 16, "homing_dir": 0, "delay_us": 100, "home_offset": 0, "gear_ratio": 20.0, "dir_invert": -1},
+    {"name": "Shoulder", "address": 1, "step_pin": 12, "dir_pin": 13, "limit_min": 5, "limit_max": 4, "run_current_mA": 800,  "hold_current_mA": 200,   "microsteps": 16, "homing_dir": 0, "delay_us": 25, "home_offset": 11732, "gear_ratio": 80.0, "dir_invert": -1}, 
+    {"name": "Elbow", "address": 2, "step_pin": 19, "dir_pin": 18, "limit_min": 5, "limit_max": 4, "run_current_mA": 800,  "hold_current_mA": 200,   "microsteps": 16, "homing_dir": 0, "delay_us": 25, "home_offset": 0, "gear_ratio": 20.0, "dir_invert": 1},
+    {"name": "Wrist", "address": 3, "step_pin": 21, "dir_pin": 20, "limit_min": 5, "limit_max": 4, "run_current_mA": 800,  "hold_current_mA": 200,   "microsteps": 16, "homing_dir": 0, "delay_us": 25, "home_offset": 0, "gear_ratio": 1.0, "dir_invert": 1},
 ]
 
 poller = select.poll()
@@ -61,14 +65,15 @@ def move_motor(motor_dict, steps, direction, delay_us, check_limits=True):
     
     for _ in range(steps):
         if check_limits:
+            is_manual_pressed = (manual_btn.value() == 0)
 
-            if direction == c['homing_dir'] and min_pin.value() == 0:
-                print(f"\n Hit MIN Hard Limit at step {steps_taken}!")
+            if direction == c['homing_dir'] and (min_pin.value() == 0 or is_manual_pressed):
+                print(f"\n Hit MIN Hard Limit (or Manual Override) at step {steps_taken}!")
                 break
             
-            # If moving towards MAX, only check the MAX switch
-            if direction != c['homing_dir'] and max_pin.value() == 0:
-                print(f"\n Hit MAX Hard Limit at step {steps_taken}!")
+            # If moving towards MAX, only check the MAX switch (or the manual override)
+            if direction != c['homing_dir'] and (max_pin.value() == 0 or is_manual_pressed):
+                print(f"\n Hit MAX Hard Limit (or Manual Override) at step {steps_taken}!")
                 break
                 
             # Generic Keyboard E-Stop
@@ -102,7 +107,7 @@ def home_motor_hybrid(motor_dict, delay_us):
         while poller.poll(0):
             sys.stdin.read(1)
             
-        print("  >>> Moving... Waiting for Physical Switch OR Keyboard 'ENTER' <<<")
+        print("   >>> Moving... Waiting for Switch OR Manual Button OR Keyboard 'ENTER' <<<")
         
         while True:
             step_pin.high()
@@ -111,9 +116,15 @@ def home_motor_hybrid(motor_dict, delay_us):
             time.sleep_us(delay_us)
             steps_taken += 1
             
+            # Check Hardware Limit Switch
             if target_pin.value() == 0:
                 return steps_taken, "Hardware Switch"
             
+            # Check Manual Push Button
+            if manual_btn.value() == 0:
+                return steps_taken, "Manual Push Button"
+            
+            # Check Keyboard
             if poller.poll(0):
                 char = sys.stdin.read(1)
                 if char in ['\n', '\r']: 
@@ -124,12 +135,12 @@ def home_motor_hybrid(motor_dict, delay_us):
     steps, trigger_type = drive_until_trigger(c['homing_dir'], min_pin)
     print(f"Hit MIN Limit! (Triggered by: {trigger_type})")
     
-    # Notice we can safely leave check_limits=True now, because moving away from MIN ignores the MIN switch!
     print("Backing off switch automatically (200 steps)")
     move_motor(motor_dict, 200, not c['homing_dir'], delay_us)
 
-    print("Please release the key/switch.")
-    while min_pin.value() == 0:
+    print("Please release all keys/switches.")
+    # Wait for BOTH the hardware switch and manual button to be released before proceeding
+    while min_pin.value() == 0 or manual_btn.value() == 0:
         time.sleep(0.01)
     while poller.poll(0):
         sys.stdin.read(1)
@@ -144,13 +155,14 @@ def home_motor_hybrid(motor_dict, delay_us):
 
     print("Debouncing MAX switch")
     move_motor(motor_dict, 200, c['homing_dir'], delay_us)
-    while max_pin.value() == 0:
+    
+    # Wait for BOTH the hardware switch and manual button to be released before proceeding
+    while max_pin.value() == 0 or manual_btn.value() == 0:
         time.sleep(0.01)
     while poller.poll(0):
         sys.stdin.read(1)
 
     # Phase 3: Calculate Center and Move Back
-    # We already backed off 200 steps, so subtract that from the travel distance
     center_steps = (total_width_steps // 2) - 200
     print(f"\nMoving to mechanical center ({center_steps} steps back)")
     move_motor(motor_dict, center_steps, c['homing_dir'], delay_us)
@@ -163,7 +175,7 @@ current_steps = 5000
 def print_dashboard():
     print("\n" * 40)
     print("=========================================================================================")
-    print("                              LIVE TMC2209 TUNING DASHBOARD                              ")
+    print("                           LIVE TMC2209 TUNING DASHBOARD                                 ")
     print("=========================================================================================")
     
     for i, m in enumerate(motors):

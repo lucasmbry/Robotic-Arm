@@ -24,3 +24,46 @@ ros2 launch six_dof_moveit demo.launch.py
 
 Remove \r windows characters
 sed -i 's/\r$//' ./ros2_ws/src/six_dof/draw_square.py
+
+
+
+### LAUNCH RVIZ file
+cd ~/ros2_ws
+colcon build --packages-select six_dof
+source install/setup.bash
+ros2 launch six_dof display.launch.py
+
+## Launch MoveIt
+cd ~/ros2_ws
+colcon build --packages-select six_dof_moveit
+source install/setup.bash
+ros2 launch six_dof_moveit demo.launch.py
+
+## Start bridge
+sudo chmod 666 /dev/ttyACM0
+cd ~/ros2_ws
+colcon build --packages-select arm_controller
+source install/setup.bash
+ros2 run arm_controller bridge
+
+## Bind USB (must close thonny)
+In powershell: 
+usbipd list
+usbipd attach --wsl --busid 3-2
+
+## Give linux readwrite usb commands
+sudo chmod 666 /dev/ttyACM0
+
+## Force older rviz rendering
+export QT_QPA_PLATFORM=xcb
+export LIBGL_ALWAYS_SOFTWARE=1
+
+## Reset wsl (powershell)
+wsl --shutdown
+
+## Dumb Start
+sudo chmod 666 /dev/ttyACM0
+cd ~/ros2_ws
+colcon build 
+source install/setup.bash
+ros2 launch six_dof_moveit demo.launch.py

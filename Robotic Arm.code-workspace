@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "\\\\wsl.localhost\\Ubuntu\\home\\lucas\\ros2_ws\\src"
+		}
+	],
+	"settings": {}
+}
