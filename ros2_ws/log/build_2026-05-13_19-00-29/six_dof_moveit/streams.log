@@ -1,0 +1,41 @@
+[0.406s] Invoking command in '/home/lucas/ros2_ws/build/six_dof_moveit': AMENT_PREFIX_PATH=/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/six_dof_moveit:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --build /home/lucas/ros2_ws/build/six_dof_moveit -- -j16 -l16
+[0.480s] Invoked command in '/home/lucas/ros2_ws/build/six_dof_moveit' returned '0': AMENT_PREFIX_PATH=/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/six_dof_moveit:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --build /home/lucas/ros2_ws/build/six_dof_moveit -- -j16 -l16
+[0.499s] Invoking command in '/home/lucas/ros2_ws/build/six_dof_moveit': AMENT_PREFIX_PATH=/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/six_dof_moveit:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --install /home/lucas/ros2_ws/build/six_dof_moveit
+[0.516s] -- Install configuration: ""
+[0.517s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/ament_index/resource_index/package_run_dependencies/six_dof_moveit
+[0.517s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/ament_index/resource_index/parent_prefix_path/six_dof_moveit
+[0.517s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/environment/ament_prefix_path.sh
+[0.518s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/environment/ament_prefix_path.dsv
+[0.518s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/environment/path.sh
+[0.519s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/environment/path.dsv
+[0.519s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/local_setup.bash
+[0.519s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/local_setup.sh
+[0.520s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/local_setup.zsh
+[0.520s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/local_setup.dsv
+[0.520s] -- Installing: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.dsv
+[0.521s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/ament_index/resource_index/packages/six_dof_moveit
+[0.521s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/cmake/six_dof_moveitConfig.cmake
+[0.521s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/cmake/six_dof_moveitConfig-version.cmake
+[0.522s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.xml
+[0.522s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/launch
+[0.523s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/launch/move_group.launch.py
+[0.524s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/launch/rsp.launch.py
+[0.524s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/launch/moveit_rviz.launch.py
+[0.524s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/launch/static_virtual_joint_tfs.launch.py
+[0.525s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/launch/warehouse_db.launch.py
+[0.525s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/launch/spawn_controllers.launch.py
+[0.526s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/launch/setup_assistant.launch.py
+[0.526s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/launch/demo.launch.py
+[0.526s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config
+[0.526s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config/initial_positions.yaml
+[0.527s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config/joint_limits.yaml
+[0.527s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config/URDF.urdf.xacro
+[0.527s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config/URDF.srdf
+[0.527s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config/moveit_controllers.yaml
+[0.528s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config/kinematics.yaml
+[0.528s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config/ros2_controllers.yaml
+[0.528s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config/pilz_cartesian_limits.yaml
+[0.528s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config/URDF.ros2_control.xacro
+[0.531s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/config/moveit.rviz
+[0.531s] -- Up-to-date: /home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/.setup_assistant
+[0.532s] Invoked command in '/home/lucas/ros2_ws/build/six_dof_moveit' returned '0': AMENT_PREFIX_PATH=/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/six_dof_moveit:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --install /home/lucas/ros2_ws/build/six_dof_moveit

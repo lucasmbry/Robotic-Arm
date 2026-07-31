@@ -1,0 +1,50 @@
+[2.418s] Invoking command in '/home/lucas/ros2_ws/src/six_dof': PYTHONPATH=/home/lucas/ros2_ws/build/six_dof/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/six_dof build --build-base /home/lucas/ros2_ws/build/six_dof/build install --record /home/lucas/ros2_ws/build/six_dof/install.log --single-version-externally-managed install_data
+[2.927s] running egg_info
+[2.927s] creating ../../build/six_dof/six_dof.egg-info
+[2.969s] writing ../../build/six_dof/six_dof.egg-info/PKG-INFO
+[2.970s] writing dependency_links to ../../build/six_dof/six_dof.egg-info/dependency_links.txt
+[2.970s] writing requirements to ../../build/six_dof/six_dof.egg-info/requires.txt
+[2.971s] writing top-level names to ../../build/six_dof/six_dof.egg-info/top_level.txt
+[2.971s] writing manifest file '../../build/six_dof/six_dof.egg-info/SOURCES.txt'
+[3.086s] reading manifest file '../../build/six_dof/six_dof.egg-info/SOURCES.txt'
+[3.088s] writing manifest file '../../build/six_dof/six_dof.egg-info/SOURCES.txt'
+[3.088s] running build
+[3.089s] running build_py
+[3.089s] creating /home/lucas/ros2_ws/build/six_dof/build
+[3.090s] creating /home/lucas/ros2_ws/build/six_dof/build/lib
+[3.091s] creating /home/lucas/ros2_ws/build/six_dof/build/lib/six_dof
+[3.092s] copying six_dof/__init__.py -> /home/lucas/ros2_ws/build/six_dof/build/lib/six_dof
+[3.122s] running install
+[3.133s] running install_lib
+[3.175s] creating /home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages/six_dof
+[3.176s] copying /home/lucas/ros2_ws/build/six_dof/build/lib/six_dof/__init__.py -> /home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages/six_dof
+[3.177s] byte-compiling /home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages/six_dof/__init__.py to __init__.cpython-312.pyc
+[3.179s] running install_data
+[3.179s] creating /home/lucas/ros2_ws/install/six_dof/share/ament_index
+[3.180s] creating /home/lucas/ros2_ws/install/six_dof/share/ament_index/resource_index
+[3.181s] creating /home/lucas/ros2_ws/install/six_dof/share/ament_index/resource_index/packages
+[3.182s] copying resource/six_dof -> /home/lucas/ros2_ws/install/six_dof/share/ament_index/resource_index/packages
+[3.182s] copying package.xml -> /home/lucas/ros2_ws/install/six_dof/share/six_dof
+[3.183s] creating /home/lucas/ros2_ws/install/six_dof/share/six_dof/launch
+[3.184s] copying launch/display.launch.py -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/launch
+[3.218s] creating /home/lucas/ros2_ws/install/six_dof/share/six_dof/urdf
+[3.219s] copying urdf/URDF.xacro:Zone.Identifier -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/urdf
+[3.220s] copying urdf/URDF.xacro:Zone.Identifier:Zone.Identifier -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/urdf
+[3.221s] copying urdf/URDF.trans -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/urdf
+[3.222s] copying urdf/materials.xacro -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/urdf
+[3.222s] copying urdf/URDF.xacro -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/urdf
+[3.223s] copying urdf/URDF.gazebo -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/urdf
+[3.223s] creating /home/lucas/ros2_ws/install/six_dof/share/six_dof/rviz
+[3.224s] creating /home/lucas/ros2_ws/install/six_dof/share/six_dof/meshes
+[3.225s] copying meshes/seventh_link_1.stl -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/meshes
+[3.227s] copying meshes/base_link.stl -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/meshes
+[3.228s] copying meshes/second_link_1.stl -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/meshes
+[3.228s] copying meshes/fourth_link_1.stl -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/meshes
+[3.229s] copying meshes/sixth_link_1.stl -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/meshes
+[3.230s] copying meshes/fifth_link_1.stl -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/meshes
+[3.230s] copying meshes/third_link_1.stl -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/meshes
+[3.232s] running install_egg_info
+[3.285s] Copying ../../build/six_dof/six_dof.egg-info to /home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages/six_dof-0.0.0-py3.12.egg-info
+[3.288s] running install_scripts
+[3.548s] writing list of installed files to '/home/lucas/ros2_ws/build/six_dof/install.log'
+[3.592s] Invoked command in '/home/lucas/ros2_ws/src/six_dof' returned '0': PYTHONPATH=/home/lucas/ros2_ws/build/six_dof/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/six_dof build --build-base /home/lucas/ros2_ws/build/six_dof/build install --record /home/lucas/ros2_ws/build/six_dof/install.log --single-version-externally-managed install_data

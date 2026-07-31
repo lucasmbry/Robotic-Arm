@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: six_dof
+    relative_path: urdf/URDF.xacro
+  srdf:
+    relative_path: config/URDF.srdf
+  package_settings:
+    author_name: Lucas
+    author_email: lucasbry10@gmail.com
+    generated_timestamp: 1778440353
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

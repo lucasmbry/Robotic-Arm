@@ -1,0 +1,20 @@
+[0.968s] Invoking command in '/home/lucas/ros2_ws/src/six_dof': PYTHONPATH=/home/lucas/ros2_ws/build/six_dof/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/six_dof build --build-base /home/lucas/ros2_ws/build/six_dof/build install --record /home/lucas/ros2_ws/build/six_dof/install.log --single-version-externally-managed install_data
+[1.288s] running egg_info
+[1.313s] writing ../../build/six_dof/six_dof.egg-info/PKG-INFO
+[1.313s] writing dependency_links to ../../build/six_dof/six_dof.egg-info/dependency_links.txt
+[1.313s] writing requirements to ../../build/six_dof/six_dof.egg-info/requires.txt
+[1.313s] writing top-level names to ../../build/six_dof/six_dof.egg-info/top_level.txt
+[1.362s] reading manifest file '../../build/six_dof/six_dof.egg-info/SOURCES.txt'
+[1.363s] writing manifest file '../../build/six_dof/six_dof.egg-info/SOURCES.txt'
+[1.364s] running build
+[1.364s] running build_py
+[1.364s] running install
+[1.371s] running install_lib
+[1.396s] running install_data
+[1.396s] copying urdf/URDF.xacro -> /home/lucas/ros2_ws/install/six_dof/share/six_dof/urdf
+[1.397s] running install_egg_info
+[1.427s] removing '/home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages/six_dof-0.0.0-py3.12.egg-info' (and everything under it)
+[1.427s] Copying ../../build/six_dof/six_dof.egg-info to /home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages/six_dof-0.0.0-py3.12.egg-info
+[1.429s] running install_scripts
+[1.597s] writing list of installed files to '/home/lucas/ros2_ws/build/six_dof/install.log'
+[1.629s] Invoked command in '/home/lucas/ros2_ws/src/six_dof' returned '0': PYTHONPATH=/home/lucas/ros2_ws/build/six_dof/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/six_dof build --build-base /home/lucas/ros2_ws/build/six_dof/build install --record /home/lucas/ros2_ws/build/six_dof/install.log --single-version-externally-managed install_data

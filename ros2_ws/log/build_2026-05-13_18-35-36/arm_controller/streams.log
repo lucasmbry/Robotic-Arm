@@ -1,0 +1,24 @@
+[2.350s] Invoking command in '/home/lucas/ros2_ws/src/arm_controller': PYTHONPATH=/home/lucas/ros2_ws/build/arm_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucas/ros2_ws/install/arm_controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/arm_controller build --build-base /home/lucas/ros2_ws/build/arm_controller/build install --record /home/lucas/ros2_ws/build/arm_controller/install.log --single-version-externally-managed install_data
+[2.819s] running egg_info
+[2.858s] writing ../../build/arm_controller/arm_controller.egg-info/PKG-INFO
+[2.860s] writing dependency_links to ../../build/arm_controller/arm_controller.egg-info/dependency_links.txt
+[2.861s] writing entry points to ../../build/arm_controller/arm_controller.egg-info/entry_points.txt
+[2.861s] writing requirements to ../../build/arm_controller/arm_controller.egg-info/requires.txt
+[2.861s] writing top-level names to ../../build/arm_controller/arm_controller.egg-info/top_level.txt
+[2.937s] reading manifest file '../../build/arm_controller/arm_controller.egg-info/SOURCES.txt'
+[2.971s] writing manifest file '../../build/arm_controller/arm_controller.egg-info/SOURCES.txt'
+[2.971s] running build
+[2.971s] running build_py
+[2.974s] copying arm_controller/serial_bridge.py -> /home/lucas/ros2_ws/build/arm_controller/build/lib/arm_controller
+[2.974s] running install
+[2.984s] running install_lib
+[3.055s] copying /home/lucas/ros2_ws/build/arm_controller/build/lib/arm_controller/serial_bridge.py -> /home/lucas/ros2_ws/install/arm_controller/lib/python3.12/site-packages/arm_controller
+[3.056s] byte-compiling /home/lucas/ros2_ws/install/arm_controller/lib/python3.12/site-packages/arm_controller/serial_bridge.py to serial_bridge.cpython-312.pyc
+[3.058s] running install_data
+[3.060s] running install_egg_info
+[3.098s] removing '/home/lucas/ros2_ws/install/arm_controller/lib/python3.12/site-packages/arm_controller-0.0.0-py3.12.egg-info' (and everything under it)
+[3.098s] Copying ../../build/arm_controller/arm_controller.egg-info to /home/lucas/ros2_ws/install/arm_controller/lib/python3.12/site-packages/arm_controller-0.0.0-py3.12.egg-info
+[3.134s] running install_scripts
+[3.385s] Installing bridge script to /home/lucas/ros2_ws/install/arm_controller/lib/arm_controller
+[3.417s] writing list of installed files to '/home/lucas/ros2_ws/build/arm_controller/install.log'
+[3.462s] Invoked command in '/home/lucas/ros2_ws/src/arm_controller' returned '0': PYTHONPATH=/home/lucas/ros2_ws/build/arm_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucas/ros2_ws/install/arm_controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/arm_controller build --build-base /home/lucas/ros2_ws/build/arm_controller/build install --record /home/lucas/ros2_ws/build/arm_controller/install.log --single-version-externally-managed install_data

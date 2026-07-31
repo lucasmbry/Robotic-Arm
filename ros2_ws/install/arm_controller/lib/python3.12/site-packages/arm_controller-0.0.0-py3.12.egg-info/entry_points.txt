@@ -1,0 +1,2 @@
+[console_scripts]
+bridge = arm_controller.serial_bridge:main

@@ -1,0 +1,313 @@
+[0.503s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.503s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x717038f6ba70>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x717038f02d50>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x717038f02d50>>)
+[0.561s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.561s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.562s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.562s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.562s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.562s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.562s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/lucas/ros2_ws'
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.562s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_controller) by extension 'ignore'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_controller) by extension 'ignore_ament_install'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_controller) by extensions ['colcon_pkg']
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_controller) by extension 'colcon_pkg'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_controller) by extensions ['colcon_meta']
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_controller) by extension 'colcon_meta'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_controller) by extensions ['ros']
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_controller) by extension 'ros'
+[0.601s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arm_controller' with type 'ros.ament_python' and name 'arm_controller'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_arm_hardware) by extensions ['ignore', 'ignore_ament_install']
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_arm_hardware) by extension 'ignore'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_arm_hardware) by extension 'ignore_ament_install'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_arm_hardware) by extensions ['colcon_pkg']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_arm_hardware) by extension 'colcon_pkg'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_arm_hardware) by extensions ['colcon_meta']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_arm_hardware) by extension 'colcon_meta'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_arm_hardware) by extensions ['ros']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_arm_hardware) by extension 'ros'
+[0.603s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_arm_hardware' with type 'ros.ament_cmake' and name 'my_arm_hardware'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof) by extensions ['ignore', 'ignore_ament_install']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof) by extension 'ignore'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof) by extension 'ignore_ament_install'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof) by extensions ['colcon_pkg']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof) by extension 'colcon_pkg'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof) by extensions ['colcon_meta']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof) by extension 'colcon_meta'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof) by extensions ['ros']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof) by extension 'ros'
+[0.604s] DEBUG:colcon.colcon_core.package_identification:Package 'src/six_dof' with type 'ros.ament_python' and name 'six_dof'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof_moveit) by extensions ['ignore', 'ignore_ament_install']
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof_moveit) by extension 'ignore'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof_moveit) by extension 'ignore_ament_install'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof_moveit) by extensions ['colcon_pkg']
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof_moveit) by extension 'colcon_pkg'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof_moveit) by extensions ['colcon_meta']
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof_moveit) by extension 'colcon_meta'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof_moveit) by extensions ['ros']
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(src/six_dof_moveit) by extension 'ros'
+[0.605s] DEBUG:colcon.colcon_core.package_identification:Package 'src/six_dof_moveit' with type 'ros.ament_cmake' and name 'six_dof_moveit'
+[0.605s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.605s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.605s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.605s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.605s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.628s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.628s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.631s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/lucas/ros2_ws/install
+[0.634s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 411 installed packages in /opt/ros/jazzy
+[0.635s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.710s] Level 5:colcon.colcon_core.verb:set package 'arm_controller' build argument 'cmake_args' from command line to 'None'
+[0.710s] Level 5:colcon.colcon_core.verb:set package 'arm_controller' build argument 'cmake_target' from command line to 'None'
+[0.710s] Level 5:colcon.colcon_core.verb:set package 'arm_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.710s] Level 5:colcon.colcon_core.verb:set package 'arm_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.710s] Level 5:colcon.colcon_core.verb:set package 'arm_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'arm_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'arm_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'arm_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'arm_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.711s] DEBUG:colcon.colcon_core.verb:Building package 'arm_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/lucas/ros2_ws/build/arm_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/lucas/ros2_ws/install/arm_controller', 'merge_install': False, 'path': '/home/lucas/ros2_ws/src/arm_controller', 'symlink_install': False, 'test_result_base': None}
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'my_arm_hardware' build argument 'cmake_args' from command line to 'None'
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'my_arm_hardware' build argument 'cmake_target' from command line to 'None'
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'my_arm_hardware' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'my_arm_hardware' build argument 'cmake_clean_cache' from command line to 'False'
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'my_arm_hardware' build argument 'cmake_clean_first' from command line to 'False'
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'my_arm_hardware' build argument 'cmake_force_configure' from command line to 'False'
+[0.711s] Level 5:colcon.colcon_core.verb:set package 'my_arm_hardware' build argument 'ament_cmake_args' from command line to 'None'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'my_arm_hardware' build argument 'catkin_cmake_args' from command line to 'None'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'my_arm_hardware' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.712s] DEBUG:colcon.colcon_core.verb:Building package 'my_arm_hardware' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/lucas/ros2_ws/build/my_arm_hardware', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/lucas/ros2_ws/install/my_arm_hardware', 'merge_install': False, 'path': '/home/lucas/ros2_ws/src/my_arm_hardware', 'symlink_install': False, 'test_result_base': None}
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof' build argument 'cmake_args' from command line to 'None'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof' build argument 'cmake_target' from command line to 'None'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof' build argument 'cmake_clean_cache' from command line to 'False'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof' build argument 'cmake_clean_first' from command line to 'False'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof' build argument 'cmake_force_configure' from command line to 'False'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof' build argument 'ament_cmake_args' from command line to 'None'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof' build argument 'catkin_cmake_args' from command line to 'None'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.712s] DEBUG:colcon.colcon_core.verb:Building package 'six_dof' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/lucas/ros2_ws/build/six_dof', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/lucas/ros2_ws/install/six_dof', 'merge_install': False, 'path': '/home/lucas/ros2_ws/src/six_dof', 'symlink_install': False, 'test_result_base': None}
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof_moveit' build argument 'cmake_args' from command line to 'None'
+[0.712s] Level 5:colcon.colcon_core.verb:set package 'six_dof_moveit' build argument 'cmake_target' from command line to 'None'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'six_dof_moveit' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'six_dof_moveit' build argument 'cmake_clean_cache' from command line to 'False'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'six_dof_moveit' build argument 'cmake_clean_first' from command line to 'False'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'six_dof_moveit' build argument 'cmake_force_configure' from command line to 'False'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'six_dof_moveit' build argument 'ament_cmake_args' from command line to 'None'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'six_dof_moveit' build argument 'catkin_cmake_args' from command line to 'None'
+[0.713s] Level 5:colcon.colcon_core.verb:set package 'six_dof_moveit' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.713s] DEBUG:colcon.colcon_core.verb:Building package 'six_dof_moveit' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/lucas/ros2_ws/build/six_dof_moveit', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/lucas/ros2_ws/install/six_dof_moveit', 'merge_install': False, 'path': '/home/lucas/ros2_ws/src/six_dof_moveit', 'symlink_install': False, 'test_result_base': None}
+[0.713s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.714s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.715s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/lucas/ros2_ws/src/six_dof' with build type 'ament_python'
+[0.715s] Level 1:colcon.colcon_core.shell:create_environment_hook('six_dof', 'ament_prefix_path')
+[0.719s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.720s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/six_dof/share/six_dof/hook/ament_prefix_path.ps1'
+[0.721s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lucas/ros2_ws/install/six_dof/share/six_dof/hook/ament_prefix_path.dsv'
+[0.721s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/six_dof/share/six_dof/hook/ament_prefix_path.sh'
+[0.722s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.722s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.728s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/lucas/ros2_ws/src/arm_controller' with build type 'ament_python'
+[0.728s] Level 1:colcon.colcon_core.shell:create_environment_hook('arm_controller', 'ament_prefix_path')
+[0.729s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/hook/ament_prefix_path.ps1'
+[0.730s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/hook/ament_prefix_path.dsv'
+[0.730s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/hook/ament_prefix_path.sh'
+[0.731s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.732s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.739s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/lucas/ros2_ws/src/my_arm_hardware' with build type 'ament_cmake'
+[0.739s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/lucas/ros2_ws/src/my_arm_hardware'
+[0.740s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.740s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.051s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/lucas/ros2_ws/src/six_dof'
+[1.051s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.051s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.342s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/lucas/ros2_ws/src/arm_controller'
+[1.342s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.342s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.355s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lucas/ros2_ws/build/my_arm_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --build /home/lucas/ros2_ws/build/my_arm_hardware -- -j16 -l16
+[2.182s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lucas/ros2_ws/src/six_dof': PYTHONPATH=/home/lucas/ros2_ws/build/six_dof/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/six_dof build --build-base /home/lucas/ros2_ws/build/six_dof/build install --record /home/lucas/ros2_ws/build/six_dof/install.log --single-version-externally-managed install_data
+[2.193s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lucas/ros2_ws/src/arm_controller': PYTHONPATH=/home/lucas/ros2_ws/build/arm_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucas/ros2_ws/install/arm_controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/arm_controller build --build-base /home/lucas/ros2_ws/build/arm_controller/build install --record /home/lucas/ros2_ws/build/arm_controller/install.log --single-version-externally-managed install_data
+[2.960s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lucas/ros2_ws/src/six_dof' returned '0': PYTHONPATH=/home/lucas/ros2_ws/build/six_dof/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/six_dof build --build-base /home/lucas/ros2_ws/build/six_dof/build install --record /home/lucas/ros2_ws/build/six_dof/install.log --single-version-externally-managed install_data
+[2.963s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof' for CMake module files
+[2.964s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof' for CMake config files
+[2.965s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof/lib'
+[2.965s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof/bin'
+[2.965s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof/lib/pkgconfig/six_dof.pc'
+[2.966s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof/lib/python3.12/site-packages'
+[2.966s] Level 1:colcon.colcon_core.shell:create_environment_hook('six_dof', 'pythonpath')
+[2.966s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/six_dof/share/six_dof/hook/pythonpath.ps1'
+[2.966s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lucas/ros2_ws/install/six_dof/share/six_dof/hook/pythonpath.dsv'
+[2.967s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/six_dof/share/six_dof/hook/pythonpath.sh'
+[2.968s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof/bin'
+[2.968s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(six_dof)
+[2.968s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof/share/six_dof/package.ps1'
+[2.969s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lucas/ros2_ws/install/six_dof/share/six_dof/package.dsv'
+[2.970s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof/share/six_dof/package.sh'
+[2.970s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof/share/six_dof/package.bash'
+[2.971s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof/share/six_dof/package.zsh'
+[2.972s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lucas/ros2_ws/install/six_dof/share/colcon-core/packages/six_dof)
+[2.973s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/lucas/ros2_ws/src/six_dof_moveit' with build type 'ament_cmake'
+[2.973s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/lucas/ros2_ws/src/six_dof_moveit'
+[2.973s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.973s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.982s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/arm_controller' for CMake module files
+[2.983s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lucas/ros2_ws/src/arm_controller' returned '0': PYTHONPATH=/home/lucas/ros2_ws/build/arm_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lucas/ros2_ws/install/arm_controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/arm_controller build --build-base /home/lucas/ros2_ws/build/arm_controller/build install --record /home/lucas/ros2_ws/build/arm_controller/install.log --single-version-externally-managed install_data
+[2.984s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/arm_controller' for CMake config files
+[2.985s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/arm_controller/lib'
+[2.985s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/arm_controller/bin'
+[2.985s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/arm_controller/lib/pkgconfig/arm_controller.pc'
+[2.985s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/arm_controller/lib/python3.12/site-packages'
+[2.985s] Level 1:colcon.colcon_core.shell:create_environment_hook('arm_controller', 'pythonpath')
+[2.986s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/hook/pythonpath.ps1'
+[2.987s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/hook/pythonpath.dsv'
+[2.987s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/hook/pythonpath.sh'
+[2.988s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/arm_controller/bin'
+[2.988s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arm_controller)
+[2.989s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/package.ps1'
+[2.989s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/package.dsv'
+[2.990s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/package.sh'
+[2.991s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/package.bash'
+[2.991s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/arm_controller/share/arm_controller/package.zsh'
+[2.992s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lucas/ros2_ws/install/arm_controller/share/colcon-core/packages/arm_controller)
+[3.310s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lucas/ros2_ws/build/six_dof_moveit': AMENT_PREFIX_PATH=/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/six_dof_moveit:/home/lucas/ros2_ws/install/my_arm_hardware:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --build /home/lucas/ros2_ws/build/six_dof_moveit -- -j16 -l16
+[3.382s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lucas/ros2_ws/build/six_dof_moveit' returned '0': AMENT_PREFIX_PATH=/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/six_dof_moveit:/home/lucas/ros2_ws/install/my_arm_hardware:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --build /home/lucas/ros2_ws/build/six_dof_moveit -- -j16 -l16
+[3.401s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lucas/ros2_ws/build/six_dof_moveit': AMENT_PREFIX_PATH=/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/six_dof_moveit:/home/lucas/ros2_ws/install/my_arm_hardware:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --install /home/lucas/ros2_ws/build/six_dof_moveit
+[3.433s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(six_dof_moveit)
+[3.433s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit' for CMake module files
+[3.434s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lucas/ros2_ws/build/six_dof_moveit' returned '0': AMENT_PREFIX_PATH=/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/six_dof_moveit:/home/lucas/ros2_ws/install/my_arm_hardware:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --install /home/lucas/ros2_ws/build/six_dof_moveit
+[3.435s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit' for CMake config files
+[3.435s] Level 1:colcon.colcon_core.shell:create_environment_hook('six_dof_moveit', 'cmake_prefix_path')
+[3.435s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/hook/cmake_prefix_path.ps1'
+[3.436s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/hook/cmake_prefix_path.dsv'
+[3.436s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/hook/cmake_prefix_path.sh'
+[3.437s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit/bin'
+[3.437s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit/lib/pkgconfig/six_dof_moveit.pc'
+[3.437s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit/lib/python3.12/site-packages'
+[3.438s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit/bin'
+[3.438s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.ps1'
+[3.438s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.dsv'
+[3.439s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.sh'
+[3.439s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.bash'
+[3.440s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.zsh'
+[3.440s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lucas/ros2_ws/install/six_dof_moveit/share/colcon-core/packages/six_dof_moveit)
+[3.441s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(six_dof_moveit)
+[3.441s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit' for CMake module files
+[3.442s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit' for CMake config files
+[3.442s] Level 1:colcon.colcon_core.shell:create_environment_hook('six_dof_moveit', 'cmake_prefix_path')
+[3.442s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/hook/cmake_prefix_path.ps1'
+[3.443s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/hook/cmake_prefix_path.dsv'
+[3.443s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/hook/cmake_prefix_path.sh'
+[3.444s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit/bin'
+[3.444s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit/lib/pkgconfig/six_dof_moveit.pc'
+[3.444s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit/lib/python3.12/site-packages'
+[3.444s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/six_dof_moveit/bin'
+[3.445s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.ps1'
+[3.445s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.dsv'
+[3.446s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.sh'
+[3.446s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.bash'
+[3.446s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/six_dof_moveit/share/six_dof_moveit/package.zsh'
+[3.447s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lucas/ros2_ws/install/six_dof_moveit/share/colcon-core/packages/six_dof_moveit)
+[8.013s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lucas/ros2_ws/build/my_arm_hardware' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --build /home/lucas/ros2_ws/build/my_arm_hardware -- -j16 -l16
+[8.015s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lucas/ros2_ws/build/my_arm_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --install /home/lucas/ros2_ws/build/my_arm_hardware
+[8.036s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_arm_hardware)
+[8.037s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware' for CMake module files
+[8.038s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lucas/ros2_ws/build/my_arm_hardware' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lucas/ros2_ws/install/six_dof:/home/lucas/ros2_ws/install/arm_controller:/home/lucas/ros2_ws/install/URDF1:/opt/ros/jazzy /usr/bin/cmake --install /home/lucas/ros2_ws/build/my_arm_hardware
+[8.038s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware' for CMake config files
+[8.039s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_arm_hardware', 'cmake_prefix_path')
+[8.039s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/cmake_prefix_path.ps1'
+[8.040s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/cmake_prefix_path.dsv'
+[8.040s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/cmake_prefix_path.sh'
+[8.041s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware/lib'
+[8.041s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_arm_hardware', 'ld_library_path_lib')
+[8.041s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/ld_library_path_lib.ps1'
+[8.041s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/ld_library_path_lib.dsv'
+[8.042s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/ld_library_path_lib.sh'
+[8.042s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware/bin'
+[8.042s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware/lib/pkgconfig/my_arm_hardware.pc'
+[8.043s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware/lib/python3.12/site-packages'
+[8.043s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware/bin'
+[8.043s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/package.ps1'
+[8.044s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/package.dsv'
+[8.044s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/package.sh'
+[8.045s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/package.bash'
+[8.045s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/package.zsh'
+[8.046s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lucas/ros2_ws/install/my_arm_hardware/share/colcon-core/packages/my_arm_hardware)
+[8.046s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_arm_hardware)
+[8.047s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware' for CMake module files
+[8.047s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware' for CMake config files
+[8.047s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_arm_hardware', 'cmake_prefix_path')
+[8.048s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/cmake_prefix_path.ps1'
+[8.048s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/cmake_prefix_path.dsv'
+[8.048s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/cmake_prefix_path.sh'
+[8.049s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware/lib'
+[8.049s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_arm_hardware', 'ld_library_path_lib')
+[8.049s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/ld_library_path_lib.ps1'
+[8.049s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/ld_library_path_lib.dsv'
+[8.050s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/hook/ld_library_path_lib.sh'
+[8.050s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware/bin'
+[8.050s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware/lib/pkgconfig/my_arm_hardware.pc'
+[8.051s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware/lib/python3.12/site-packages'
+[8.051s] Level 1:colcon.colcon_core.environment:checking '/home/lucas/ros2_ws/install/my_arm_hardware/bin'
+[8.051s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/package.ps1'
+[8.052s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/package.dsv'
+[8.052s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/package.sh'
+[8.053s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/package.bash'
+[8.053s] INFO:colcon.colcon_core.shell:Creating package script '/home/lucas/ros2_ws/install/my_arm_hardware/share/my_arm_hardware/package.zsh'
+[8.054s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lucas/ros2_ws/install/my_arm_hardware/share/colcon-core/packages/my_arm_hardware)
+[8.054s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[8.055s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[8.055s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[8.055s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[8.223s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[8.223s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[8.223s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[8.224s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[8.225s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[8.225s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[8.226s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/lucas/ros2_ws/install/local_setup.ps1'
+[8.226s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/lucas/ros2_ws/install/_local_setup_util_ps1.py'
+[8.227s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/lucas/ros2_ws/install/setup.ps1'
+[8.229s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/lucas/ros2_ws/install/local_setup.sh'
+[8.229s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/lucas/ros2_ws/install/_local_setup_util_sh.py'
+[8.230s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/lucas/ros2_ws/install/setup.sh'
+[8.232s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/lucas/ros2_ws/install/local_setup.bash'
+[8.232s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/lucas/ros2_ws/install/setup.bash'
+[8.233s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/lucas/ros2_ws/install/local_setup.zsh'
+[8.234s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/lucas/ros2_ws/install/setup.zsh'

@@ -1,0 +1,28 @@
+[01m[K/home/lucas/ros2_ws/src/my_arm_hardware/src/pico_interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn my_arm_hardware::PicoInterface::[01;32m[Kon_init[m[K(const hardware_interface::HardwareInfo&)[m[K’:
+[01m[K/home/lucas/ros2_ws/src/my_arm_hardware/src/pico_interface.cpp:13:51:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvirtual rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn hardware_interface::HardwareComponentInterface::[01;32m[Kon_init[m[K(const hardware_interface::HardwareInfo&)[m[K’ is deprecated: Use on_init(const HardwareComponentInterfaceParams & params) instead. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   13 |   if ([01;35m[Khardware_interface::SystemInterface::on_init(info)[m[K != hardware_interface::CallbackReturn::SUCCESS) {
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/hardware_interface/hardware_interface/system_interface.hpp:18[m[K,
+                 from [01m[K/home/lucas/ros2_ws/src/my_arm_hardware/include/my_arm_hardware/pico_interface.hpp:4[m[K,
+                 from [01m[K/home/lucas/ros2_ws/src/my_arm_hardware/src/pico_interface.cpp:1[m[K:
+[01m[K/opt/ros/jazzy/include/hardware_interface/hardware_interface/hardware_component_interface.hpp:140:26:[m[K [01;36m[Knote: [m[Kdeclared here
+  140 |   virtual CallbackReturn [01;36m[Kon_init[m[K(const HardwareInfo & hardware_info);
+      |                          [01;36m[K^~~~~~~[m[K
+[01m[K/home/lucas/ros2_ws/src/my_arm_hardware/src/pico_interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type my_arm_hardware::PicoInterface::[01;32m[Kwrite[m[K(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/home/lucas/ros2_ws/src/my_arm_hardware/src/pico_interface.cpp:104:63:[m[K [01;31m[Kerror: [m[K‘[01m[Kbase_rad[m[K’ was not declared in this scope
+  104 |   snprintf(buffer, sizeof(buffer), "<%.5f,%.5f,%.5f,%.5f>\n", [01;31m[Kbase_rad[m[K, shoulder_rad, elbow_rad, wrist_rad);
+      |                                                               [01;31m[K^~~~~~~~[m[K
+[01m[K/home/lucas/ros2_ws/src/my_arm_hardware/src/pico_interface.cpp:104:73:[m[K [01;31m[Kerror: [m[K‘[01m[Kshoulder_rad[m[K’ was not declared in this scope
+  104 |   snprintf(buffer, sizeof(buffer), "<%.5f,%.5f,%.5f,%.5f>\n", base_rad, [01;31m[Kshoulder_rad[m[K, elbow_rad, wrist_rad);
+      |                                                                         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/lucas/ros2_ws/src/my_arm_hardware/src/pico_interface.cpp:104:87:[m[K [01;31m[Kerror: [m[K‘[01m[Kelbow_rad[m[K’ was not declared in this scope
+  104 | printf(buffer, sizeof(buffer), "<%.5f,%.5f,%.5f,%.5f>\n", base_rad, shoulder_rad, [01;31m[Kelbow_rad[m[K, wrist_rad);
+      |                                                                                   [01;31m[K^~~~~~~~~[m[K
+
+[01m[K/home/lucas/ros2_ws/src/my_arm_hardware/src/pico_interface.cpp:104:98:[m[K [01;31m[Kerror: [m[K‘[01m[Kwrist_rad[m[K’ was not declared in this scope
+  104 | er, sizeof(buffer), "<%.5f,%.5f,%.5f,%.5f>\n", base_rad, shoulder_rad, elbow_rad, [01;31m[Kwrist_rad[m[K);
+      |                                                                                   [01;31m[K^~~~~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/my_arm_hardware.dir/build.make:76: CMakeFiles/my_arm_hardware.dir/src/pico_interface.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/my_arm_hardware.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

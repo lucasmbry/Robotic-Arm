@@ -1,0 +1,9 @@
+<library path="my_arm_hardware">
+  <class name="my_arm_hardware/PicoInterface" 
+         type="my_arm_hardware::PicoInterface" 
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Serial Interface for Raspberry Pi Pico running time-sliced MicroPython steppers.
+    </description>
+  </class>
+</library>

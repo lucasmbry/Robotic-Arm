@@ -1,0 +1,9 @@
+/home/lucas/ros2_ws/build/six_dof_moveit/CMakeFiles/uninstall.dir
+/home/lucas/ros2_ws/build/six_dof_moveit/CMakeFiles/six_dof_moveit_uninstall.dir
+/home/lucas/ros2_ws/build/six_dof_moveit/CMakeFiles/test.dir
+/home/lucas/ros2_ws/build/six_dof_moveit/CMakeFiles/edit_cache.dir
+/home/lucas/ros2_ws/build/six_dof_moveit/CMakeFiles/rebuild_cache.dir
+/home/lucas/ros2_ws/build/six_dof_moveit/CMakeFiles/list_install_components.dir
+/home/lucas/ros2_ws/build/six_dof_moveit/CMakeFiles/install.dir
+/home/lucas/ros2_ws/build/six_dof_moveit/CMakeFiles/install/local.dir
+/home/lucas/ros2_ws/build/six_dof_moveit/CMakeFiles/install/strip.dir
