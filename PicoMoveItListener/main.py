@@ -6,7 +6,7 @@ import math
 import micropython
 import _thread
 import rp2
-from Archive.tmc2209 import TMC2209
+from tmc2209 import TMC2209
 import homer 
 
 print("Waiting 3 seconds")
@@ -45,7 +45,7 @@ for config in MOTOR_CONFIGS:
     
     tmc.set_motor_current(run_current_ma=config['run_current_mA'], hold_current_ma=config['hold_current_mA'])
     tmc.set_microstepping(config['microsteps'])
-    tmc.set_stealthchop_enable(True) 
+    tmc.set_stealthchop_enable(False) 
     tmc.enable()
     
     # Diagnostic
