@@ -1,10 +1,6 @@
 # 6-DOF Robotic Manipulator Arm
 
-A custom 6-degree-of-freedom robotic manipulator engineered from scratch, featuring 3D-printed NEMA 17 joints, TMC2209 silent stepper control, and a full ROS 2 / MoveIt motion planning pipeline with digital twin Gazebo simulation
-
----
-
-### Key Features
+A custom 6-degree-of-freedom robotic manipulator engineered from scratch, featuring 3D-printed NEMA 17 joints, TMC2209 stepper control, and a full ROS 2 / MoveIt motion planning pipeline with digital twin Gazebo simulation
 
 * **6-DOF Kinematic Chain:** Fully articulated arm with 6 revolute joints for full end-effector positioning and orientation
 * **Closed-Loop / Silent Actuation:** Driven by NEMA steppers paired with TMC2209 drivers using limit switches for simple homing
