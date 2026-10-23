@@ -18,7 +18,7 @@ micropython.kbd_intr(-1)
 #   <j1,j2,j3,j4,j5,j6,servo_deg>  optional 7th value = servo angle (0-180 deg)
 # ---------------------------------------------------------
 
-DEBUG = False            # Set True for verbose prints (slows the loops down)
+DEBUG = True           # Set True for verbose prints (slows the loops down)
 LIMITS_ENABLED = True    # Block motion into a triggered hard limit switch
 
 led = Pin("LED", Pin.OUT)
@@ -150,175 +150,131 @@ position_lock = _thread.allocate_lock()
 @rp2.asm_pio(set_init=rp2.PIO.OUT_LOW)
 def pio_stepper():
     wrap_target()
-    pull(block)        # Pull word 1: delay_cycles
-    mov(isr, osr)      # Save delay_cycles into ISR
-    pull(block)        # Pull word 2: step_count
-    mov(y, osr)        # Save step_count into Y
+    pull(block)             # Word 1: inter-step delay cycles
+    mov(x, osr)
+    pull(block)             # Word 2: step count
+    mov(y, osr)
 
-    jmp(y_dec, "step_loop")    # Decrement Y by 1 to align with N steps
-
-    label("step_loop")
-    set(pins, 1) [1]   # Drive Step HIGH (2us)
-    set(pins, 0)       # Drive Step LOW
-
-    mov(x, isr)        # Reload delay_cycles
-    label("delay_loop")
-    jmp(x_dec, "delay_loop")
-
-    jmp(y_dec, "step_loop")
+    label("pulse_loop")
+    set(pins, 1) [2]        # 3us high
+    set(pins, 0)            # low
+    mov(isr, x)             # copy delay into temporary scratch
+    label("wait_gap")
+    jmp(x_dec, "wait_gap")
+    mov(x, isr)             # restore delay
+    jmp(y_dec, "pulse_loop")
     wrap()
 
+# After the motors list is built and pio_stepper is defined:
+sms = []
+free_ids = list(range(8))
+for m in motors:
+    sm = None
+    while free_ids:
+        sid = free_ids.pop(0)
+        try:
+            sm = rp2.StateMachine(sid, pio_stepper, freq=1_000_000,
+                                  set_base=m["step_pin_obj"])
+            print(f"{m['config']['name']} -> SM {sid}")
+            break
+        except ValueError:
+            print(f"SM {sid} unavailable, skipping")
+    if sm is None:
+        raise RuntimeError("Not enough free PIO state machines")
+    sm.active(1)
+    sms.append(sm)
+
 # Core 1 PIO motor stepping thread with trapezoidal velocity ramping
-def motor_stepping_thread(lock, motor_array):
-
+def motor_stepping_thread(lock, motor_array, sms):
     print("CORE 1 on (PIO)")
-
-    # 6 state machines: SM 0-3 live on PIO0, SM 4-5 on PIO1
-    sms = []
-    for i, m in enumerate(motor_array):
-        sm = rp2.StateMachine(i, pio_stepper, freq=1_000_000, set_base=m["step_pin_obj"])
-        sm.active(1)
-        sms.append(sm)
-
-    EVALUATION_INTERVAL_US = 5000
-    last_loop_time = time.ticks_us()
-
-    debug_tick = 0
-
+    last_time = time.ticks_us()
     while True:
         try:
             now = time.ticks_us()
-            dt_us = time.ticks_diff(now, last_loop_time)
-            if dt_us <= 0: dt_us = 1
+            dt_us = time.ticks_diff(now, last_time)
+            if dt_us <= 0:
+                dt_us = 1
             dt_s = dt_us / 1_000_000.0
-            last_loop_time = now
-
-            debug_tick += 1
-            do_print = DEBUG and (debug_tick % 100 == 0)
-
-            if do_print:
-                print(f"\n[CORE 1] --- Loop Active | dt_s: {dt_s:.5f} ---")
+            last_time = now
 
             for idx, m in enumerate(motor_array):
-                lock.acquire()
-                target = m["target_position"]
-                current = m["current_position"]
-                lock.release()
+                with lock:
+                    target = m["target_position"]
+                    current = m["current_position"]
 
                 dist = target - current
                 velocity = m["velocity"]
                 max_speed = m["max_speed"]
                 max_accel = m["max_accel"]
 
-                # ---- Hard limit protection ----
-                if LIMITS_ENABLED and (dist != 0 or velocity != 0):
-                    move_sign = velocity if velocity != 0 else dist
-                    # Positive motion heads toward MIN only if homing_dir == 1
-                    toward_min = (move_sign > 0) == (m["homing_dir_val"] == 1)
-                    limit_pin = m["limit_min_pin"] if toward_min else m["limit_max_pin"]
-                    if limit_pin.value() == 0:
-                        if not m["limit_tripped"]:
-                            print(f"[CORE 1] {m['config']['name']} hit {'MIN' if toward_min else 'MAX'} limit - stopping")
-                            m["limit_tripped"] = True
-                        lock.acquire()
-                        m["target_position"] = m["current_position"]
-                        lock.release()
-                        m["velocity"] = 0.0
-                        m["step_accum"] = 0.0
-                        continue
-                    else:
-                        m["limit_tripped"] = False
-
+                # Trapezoidal ramp calculation
                 if dist == 0:
                     if velocity > 0:
                         velocity = max(0.0, velocity - max_accel * dt_s)
                     elif velocity < 0:
                         velocity = min(0.0, velocity + max_accel * dt_s)
-                    if velocity == 0:
-                        m["step_accum"] = 0.0
                 else:
                     direction = 1.0 if dist > 0 else -1.0
                     desired_speed = direction * max_speed
                     decel_dist = (velocity * velocity) / (2.0 * max_accel) if max_accel > 0 else 0
 
                     if abs(dist) <= decel_dist and velocity != 0:
+                        # Braking
                         if velocity > 0:
                             velocity = max(0.0, velocity - max_accel * dt_s)
                         else:
                             velocity = min(0.0, velocity + max_accel * dt_s)
                     else:
+                        # Accelerating / cruising
                         if velocity < desired_speed:
                             velocity = min(desired_speed, velocity + max_accel * dt_s)
                         elif velocity > desired_speed:
                             velocity = max(desired_speed, velocity - max_accel * dt_s)
 
-                    if dist != 0 and abs(velocity) < 15.0:
-                        velocity = 15.0 if dist > 0 else -15.0
-
                 m["velocity"] = velocity
 
+                if velocity == 0.0:
+                    m["step_accum"] = 0.0
+                    continue
+
+                # Accumulate steps
                 m["step_accum"] += velocity * dt_s
-                steps_to_take = int(m["step_accum"])
+                steps = int(m["step_accum"])
 
-                if do_print:
-                    print(f"[CORE 1] {m['config']['name']:>8} | Cur: {current:<6} Tgt: {target:<6} Dist: {dist:<6} Vel: {velocity:.1f}")
+                if steps != 0:
+                    # Direction determination
+                    step_dir = 1 if steps > 0 else 0
+                    if m["dir_invert"] == -1:
+                        step_dir ^= 1
 
-                if steps_to_take != 0:
-                    abs_steps = abs(steps_to_take)
+                    set_motor_direction(m["shift_idx"], step_dir)
 
-                    if abs_steps > abs(dist):
-                        abs_steps = abs(dist)
-                        steps_to_take = abs_steps if steps_to_take > 0 else -abs_steps
-                        clear_accum = True
-                    else:
-                        clear_accum = False
-
+                    abs_steps = min(abs(steps), abs(dist))
                     if abs_steps > 0:
+                        # If PIO FIFO has room for delay + count (2 words)
+                        if sms[idx].tx_fifo() <= 2:
+                            # Step pulse period in microseconds (at 1 MHz clock, 1 tick = 1 us)
+                            # Minimum delay floor = 20 us (50 kHz max step rate)
+                            step_rate = max(15.0, abs(velocity))
+                            delay_ticks = max(20, int(1_000_000 / step_rate) - 6)
 
-                        if sms[idx].tx_fifo() < 3:
+                            sms[idx].put(delay_ticks)
+                            # PIO counts 0 to N-1 for N steps
+                            sms[idx].put(abs_steps - 1)
 
-                            if clear_accum:
-                                m["step_accum"] = 0.0
-                            else:
-                                m["step_accum"] -= steps_to_take
+                            m["step_accum"] -= (abs_steps if steps > 0 else -abs_steps)
+                            with lock:
+                                m["current_position"] += (abs_steps if steps > 0 else -abs_steps)
 
-                            # Direction logic matches the working test script
-                            is_forward = steps_to_take > 0
-                            if m["dir_invert"] == -1:
-                                is_forward = not is_forward
-
-                            target_dir_val = 0 if m["homing_dir_val"] == 0 else 1
-                            if is_forward:
-                                target_dir_val = 1 if target_dir_val == 0 else 0
-
-                            set_motor_direction(m["shift_idx"], target_dir_val)
-
-                            delay_cycles = int((dt_s * 1_000_000) / abs_steps) - 5
-                            delay_cycles = max(0, min(2147483647, delay_cycles))
-
-                            if do_print:
-                                print(f"[CORE 1] PUT idx={idx} steps={abs_steps} delay={delay_cycles}")
-
-                            sms[idx].put(delay_cycles)
-                            sms[idx].put(abs_steps)
-
-                            lock.acquire()
-                            m["current_position"] += steps_to_take
-                            lock.release()
-
-            elapsed = time.ticks_diff(time.ticks_us(), now)
-            sleep_for = EVALUATION_INTERVAL_US - elapsed
-            if sleep_for > 0:
-                time.sleep_us(sleep_for)
+            time.sleep_us(2000)
 
         except Exception as e:
-            print("[CORE 1] FATAL ERROR:")
-            sys.print_exception(e)
+            print(f"[CORE 1 ERROR]: {e}")
             break
 
 
 # Spawn the motor loop onto Core 1
-_thread.start_new_thread(motor_stepping_thread, (position_lock, motors))
+_thread.start_new_thread(motor_stepping_thread, (position_lock, motors, sms))
 
 # Core 0 serial listener
 serial_buffer = ""
