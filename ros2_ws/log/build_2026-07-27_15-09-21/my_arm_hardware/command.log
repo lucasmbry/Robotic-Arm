@@ -1,2 +1,0 @@
-Invoking command in '/home/lucas/ros2_ws/build/my_arm_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/lucas/ros2_ws/build/my_arm_hardware -- -j16 -l16
-Invoked command in '/home/lucas/ros2_ws/build/my_arm_hardware' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/lucas/ros2_ws/build/my_arm_hardware -- -j16 -l16

@@ -1,9 +1,0 @@
-# Default initial positions for URDF's ros2_control fake system
-
-initial_positions:
-  Revolute 10: 0.0
-  Revolute 11: 0.0
-  Revolute 12: 0.0
-  Revolute 13: 0.0
-  Revolute 7: 0.0
-  Revolute 8: 0.0

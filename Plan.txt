@@ -7,7 +7,7 @@ Want controller through real space to control arm
 Using tmc2209 - https://www.xecor.com/blog/tmc2209-pinout-datasheet-alternatives-uses#title-1tmc2209-pinout
 
 Assume 20cm - 20cm - 10cm arm
-500g max load
+2000g max load
 500g from motors
 1kg from body
 

@@ -1,4 +1,0 @@
-source;share/six_dof_moveit/local_setup.bash
-source;share/six_dof_moveit/local_setup.dsv
-source;share/six_dof_moveit/local_setup.sh
-source;share/six_dof_moveit/local_setup.zsh
